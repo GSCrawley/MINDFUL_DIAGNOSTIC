@@ -1,0 +1,868 @@
+[
+    {
+      "n": {
+        "identity": 0,
+        "labels": [
+          "Patient"
+        ],
+        "properties": {
+          "lifestyle_travel_history": [
+            "Southeast Asia"
+          ],
+          "genetic_family_history": [
+            "Breast Cancer",
+            "Ovarian Cancer"
+          ],
+          "genetic_known_mutations": [
+            "BRCA1 c.5266dupC"
+          ],
+          "created_at": "2025-07-13T01:09:41.853000000Z",
+          "lifestyle_occupation": "Teacher",
+          "demo_age": 45,
+          "genetic_consanguinity": false,
+          "lifestyle_environmental_exposures": [
+            "Asbestos"
+          ],
+          "updated_at": "2025-07-13T01:22:19.129000000Z",
+          "patient_id": "P001",
+          "demo_gender": "Female",
+          "demo_geographic_location": "North America",
+          "demo_ethnicity": "Caucasian"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:0"
+      }
+    },
+    {
+      "n": {
+        "identity": 1,
+        "labels": [
+          "Disease"
+        ],
+        "properties": {
+          "prognosis_life_expectancy_impact": "Reduced if untreated",
+          "disease_code": "Q87.1",
+          "aliases": [
+            "Marfan Disease",
+            "Arachnodactyly"
+          ],
+          "onset_typical_min": 10,
+          "umls_cui": "C0024507",
+          "snomed_code": "205824006",
+          "prognosis_severity": "Variable",
+          "prevalence": 0.02,
+          "updated_at": "2025-07-13T01:22:19.294000000Z",
+          "inheritance_pattern": "Autosomal Dominant",
+          "onset_earliest_reported": 2,
+          "name": "Marfan Syndrome",
+          "specialties_involved": [
+            "Cardiology",
+            "Ophthalmology",
+            "Orthopedics",
+            "Genetics"
+          ],
+          "onset_typical_max": 30,
+          "category": "rare",
+          "onset_latest_reported": 60,
+          "prognosis_qol_impact": "Moderate to Severe"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:1"
+      }
+    },
+    {
+      "n": {
+        "identity": 2,
+        "labels": [
+          "Syndrome"
+        ],
+        "properties": {
+          "genetic_inheritance_pattern": "Sporadic",
+          "syndrome_id": "SYN001",
+          "required_combinations": [
+            "At least 3 major criteria present"
+          ],
+          "alternative_names": [
+            "VATER Association",
+            "VACTERL Sequence"
+          ],
+          "affected_systems": [
+            "Skeletal",
+            "Gastrointestinal",
+            "Cardiovascular",
+            "Respiratory",
+            "Genitourinary",
+            "Musculoskeletal"
+          ],
+          "updated_at": "2025-07-13T01:22:19.570000000Z",
+          "minor_criteria": [
+            "Growth deficiency",
+            "Developmental delay"
+          ],
+          "name": "VACTERL Association",
+          "first_described": "1973-01-01",
+          "major_criteria": [
+            "Vertebral anomalies",
+            "Anal atresia",
+            "Cardiac defects",
+            "Tracheoesophageal fistula",
+            "Renal anomalies",
+            "Limb defects"
+          ],
+          "rarity_score": 0.95,
+          "genetic_penetrance": 1.0,
+          "genetic_known_genes": [
+            "Unknown - likely polygenic"
+          ]
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:2"
+      }
+    },
+    {
+      "n": {
+        "identity": 3,
+        "labels": [
+          "Symptom"
+        ],
+        "properties": {
+          "hpo_code": "HP:0001166",
+          "description": "Abnormally long and slender fingers and toes",
+          "severity_moderate": "Noticeably long fingers",
+          "snomed_code": "299737002",
+          "age_adult_presentation": "Fully manifest by adolescence",
+          "severity_mild": "Slightly elongated digits",
+          "severity_severe": "Extremely elongated digits with joint hypermobility",
+          "age_elderly_presentation": "May worsen with joint changes",
+          "updated_at": "2025-07-13T01:22:19.746000000Z",
+          "body_system": "Musculoskeletal",
+          "temporal_pattern": "chronic",
+          "name": "Arachnodactyly",
+          "age_pediatric_presentation": "May be subtle in young children",
+          "measurable": true
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:3"
+      }
+    },
+    {
+      "n": {
+        "identity": 4,
+        "labels": [
+          "Provider"
+        ],
+        "properties": {
+          "specialty": "Medical Genetics",
+          "research_interests": [
+            "Marfan Syndrome",
+            "Ehlers-Danlos Syndrome",
+            "Genetic Counseling"
+          ],
+          "contact_phone": "+1-555-0123",
+          "credentials_board_certifications": [
+            "Medical Genetics",
+            "Internal Medicine"
+          ],
+          "created_at": "2025-07-13T01:09:42.489000000Z",
+          "active": true,
+          "credentials_degrees": [
+            "MD",
+            "PhD"
+          ],
+          "sub_specialties": [
+            "Rare Diseases",
+            "Connective Tissue Disorders"
+          ],
+          "contact_email": "sarah.johnson@umc.edu",
+          "institution": "University Medical Center",
+          "updated_at": "2025-07-13T01:22:20.224000000Z",
+          "name": "Dr. Sarah Johnson",
+          "provider_id": "PROV001",
+          "credentials_years_experience": 15,
+          "department": "Department of Medical Genetics",
+          "contact_office": "Building A, Room 301"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:4"
+      }
+    },
+    {
+      "n": {
+        "identity": 5,
+        "labels": [
+          "DiagnosticTest"
+        ],
+        "properties": {
+          "clinical_contraindications": [
+            "None significant"
+          ],
+          "clinical_indications": [
+            "Aortic root dilatation",
+            "Mitral valve prolapse",
+            "Cardiac function assessment"
+          ],
+          "cost_typical_range_max": 500,
+          "param_contrast_used": false,
+          "created_at": "2025-07-13T01:09:42.688000000Z",
+          "clinical_specificity": 0.9,
+          "clinical_sensitivity": 0.95,
+          "cost_typical_range_min": 200,
+          "test_type": "Non-invasive",
+          "availability_routine_wait_days": 7,
+          "availability_urgent": true,
+          "updated_at": "2025-07-13T01:22:20.424000000Z",
+          "param_preparation_required": false,
+          "param_radiation_exposure": false,
+          "name": "Echocardiogram",
+          "param_duration_minutes": 45,
+          "test_code": "ECHO001",
+          "category": "Cardiac Imaging"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:5"
+      }
+    },
+    {
+      "n": {
+        "identity": 6,
+        "labels": [
+          "Treatment"
+        ],
+        "properties": {
+          "cost_procedure_max": 100000,
+          "common_side_effects": [
+            "Post-operative pain",
+            "Temporary fatigue"
+          ],
+          "contraindications": [
+            "Severe heart failure",
+            "Active infection"
+          ],
+          "duration_procedure_hours": 4,
+          "treatment_id": "TRT001",
+          "created_at": "2025-07-13T01:09:42.839000000Z",
+          "treatment_type": "Preventive Surgery",
+          "efficacy_mortality_rate": 0.02,
+          "timing_optimal_age_min": 20,
+          "cost_procedure_min": 50000,
+          "efficacy_success_rate": 0.95,
+          "timing_urgency_level": "Elective",
+          "updated_at": "2025-07-13T01:22:20.845000000Z",
+          "cost_follow_up_annual": 2000,
+          "duration_recovery_weeks": 6,
+          "name": "Aortic Root Replacement",
+          "category": "Surgical",
+          "efficacy_complication_rate": 0.05,
+          "rare_side_effects": [
+            "Bleeding",
+            "Infection",
+            "Stroke"
+          ],
+          "timing_optimal_age_max": 50
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:6"
+      }
+    },
+    {
+      "n": {
+        "identity": 7,
+        "labels": [
+          "Encounter"
+        ],
+        "properties": {
+          "followup_required": true,
+          "visit_status": "Completed",
+          "visit_location": "Genetics Clinic",
+          "created_at": "2025-07-13T01:09:42.930000000Z",
+          "followup_timeframe_weeks": 4,
+          "followup_reason": "Review genetic test results",
+          "assessment_differential_diagnosis": [
+            "Ehlers-Danlos Syndrome",
+            "Loeys-Dietz Syndrome"
+          ],
+          "assessment_provisional_diagnosis": [
+            "Rule out Marfan Syndrome"
+          ],
+          "updated_at": "2025-07-13T01:22:21.211000000Z",
+          "duration_minutes": 60,
+          "encounter_id": "ENC001",
+          "assessment_clinical_impression": "Suggestive features present, genetic testing recommended",
+          "encounter_type": "Initial Consultation",
+          "timestamp": "2024-01-15T09:30:00Z",
+          "visit_chief_complaint": "Family history of Marfan syndrome, requesting evaluation"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:7"
+      }
+    },
+    {
+      "n": {
+        "identity": 8,
+        "labels": [
+          "Patient"
+        ],
+        "properties": {
+          "lifestyle_travel_history": [
+            "Europe",
+            "Asia"
+          ],
+          "genetic_family_history": [
+            "Marfan Syndrome"
+          ],
+          "genetic_known_mutations": [
+            "FBN1 c.1234G>A"
+          ],
+          "created_at": "2025-07-13T01:22:19.219000000Z",
+          "lifestyle_occupation": "Software Engineer",
+          "demo_age": 28,
+          "genetic_consanguinity": false,
+          "lifestyle_environmental_exposures": [],
+          "updated_at": "2025-07-13T01:22:19.219000000Z",
+          "patient_id": "P002",
+          "demo_gender": "Male",
+          "demo_geographic_location": "South America",
+          "demo_ethnicity": "Hispanic"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:8"
+      }
+    },
+    {
+      "n": {
+        "identity": 9,
+        "labels": [
+          "Disease"
+        ],
+        "properties": {
+          "prognosis_life_expectancy_impact": "Normal to slightly reduced",
+          "disease_code": "Q79.6",
+          "aliases": [
+            "EDS",
+            "Cutis Hyperelastica"
+          ],
+          "onset_typical_min": 5,
+          "created_at": "2025-07-13T01:22:19.386000000Z",
+          "umls_cui": "C0013720",
+          "snomed_code": "398114001",
+          "prognosis_severity": "Variable by type",
+          "prevalence": 0.05,
+          "updated_at": "2025-07-13T01:22:19.386000000Z",
+          "inheritance_pattern": "Variable",
+          "onset_earliest_reported": 0,
+          "name": "Ehlers-Danlos Syndrome",
+          "specialties_involved": [
+            "Rheumatology",
+            "Genetics",
+            "Cardiology",
+            "Dermatology"
+          ],
+          "onset_typical_max": 25,
+          "category": "rare",
+          "onset_latest_reported": 50,
+          "prognosis_qol_impact": "Moderate"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:9"
+      }
+    },
+    {
+      "n": {
+        "identity": 10,
+        "labels": [
+          "Disease"
+        ],
+        "properties": {
+          "prognosis_life_expectancy_impact": "Significantly reduced if untreated",
+          "disease_code": "Q87.4",
+          "aliases": [
+            "LDS",
+            "Aortic Aneurysm Syndrome"
+          ],
+          "onset_typical_min": 0,
+          "created_at": "2025-07-13T01:22:19.486000000Z",
+          "umls_cui": "C0024796",
+          "snomed_code": "715575001",
+          "prognosis_severity": "Severe",
+          "prevalence": 0.001,
+          "updated_at": "2025-07-13T01:22:19.486000000Z",
+          "inheritance_pattern": "Autosomal Dominant",
+          "onset_earliest_reported": 0,
+          "name": "Loeys-Dietz Syndrome",
+          "specialties_involved": [
+            "Cardiology",
+            "Vascular Surgery",
+            "Genetics",
+            "Ophthalmology"
+          ],
+          "onset_typical_max": 20,
+          "category": "rare",
+          "onset_latest_reported": 40,
+          "prognosis_qol_impact": "Severe"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:10"
+      }
+    },
+    {
+      "n": {
+        "identity": 11,
+        "labels": [
+          "Syndrome"
+        ],
+        "properties": {
+          "genetic_inheritance_pattern": "Autosomal Dominant",
+          "syndrome_id": "SYN002",
+          "required_combinations": [
+            "2 major + 2 minor criteria"
+          ],
+          "created_at": "2025-07-13T01:22:19.664000000Z",
+          "alternative_names": [
+            "CTD Spectrum",
+            "Heritable Connective Tissue Disorders"
+          ],
+          "affected_systems": [
+            "Musculoskeletal",
+            "Cardiovascular",
+            "Integumentary",
+            "Ocular"
+          ],
+          "updated_at": "2025-07-13T01:22:19.664000000Z",
+          "minor_criteria": [
+            "Easy bruising",
+            "Delayed wound healing",
+            "Hernias"
+          ],
+          "name": "Connective Tissue Disorder Spectrum",
+          "first_described": "1967-01-01",
+          "major_criteria": [
+            "Joint hypermobility",
+            "Skin hyperextensibility",
+            "Tissue fragility",
+            "Cardiovascular involvement"
+          ],
+          "rarity_score": 0.7,
+          "genetic_penetrance": 0.9,
+          "genetic_known_genes": [
+            "FBN1",
+            "COL5A1",
+            "COL5A2",
+            "TGFBR1",
+            "TGFBR2"
+          ]
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:11"
+      }
+    },
+    {
+      "n": {
+        "identity": 12,
+        "labels": [
+          "Symptom"
+        ],
+        "properties": {
+          "hpo_code": "HP:0001519",
+          "created_at": "2025-07-13T01:22:19.848000000Z",
+          "description": "Abnormally increased height relative to limb proportions",
+          "severity_moderate": "Height >97th percentile with arm span ratio >1.05",
+          "snomed_code": "271587009",
+          "age_adult_presentation": "Final height significantly above normal",
+          "severity_mild": "Height >95th percentile",
+          "severity_severe": "Height >99th percentile with multiple proportion abnormalities",
+          "age_elderly_presentation": "May develop spinal complications",
+          "updated_at": "2025-07-13T01:22:19.848000000Z",
+          "body_system": "Growth",
+          "temporal_pattern": "progressive",
+          "name": "Disproportionate tall stature",
+          "age_pediatric_presentation": "Accelerated growth velocity",
+          "measurable": true
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:12"
+      }
+    },
+    {
+      "n": {
+        "identity": 13,
+        "labels": [
+          "Symptom"
+        ],
+        "properties": {
+          "hpo_code": "HP:0001634",
+          "created_at": "2025-07-13T01:22:19.913000000Z",
+          "description": "Abnormal systolic billowing of mitral valve leaflets",
+          "severity_moderate": "Moderate displacement with mild regurgitation",
+          "snomed_code": "233985008",
+          "age_adult_presentation": "May cause palpitations or chest pain",
+          "severity_mild": "Minimal leaflet displacement without regurgitation",
+          "severity_severe": "Severe displacement with significant regurgitation",
+          "age_elderly_presentation": "Risk of progressive regurgitation",
+          "updated_at": "2025-07-13T01:22:19.913000000Z",
+          "body_system": "Cardiovascular",
+          "temporal_pattern": "chronic",
+          "name": "Mitral valve prolapse",
+          "age_pediatric_presentation": "Often asymptomatic",
+          "measurable": true
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:13"
+      }
+    },
+    {
+      "n": {
+        "identity": 14,
+        "labels": [
+          "Symptom"
+        ],
+        "properties": {
+          "hpo_code": "HP:0001382",
+          "created_at": "2025-07-13T01:22:20.082000000Z",
+          "description": "Increased range of motion in joints beyond normal limits",
+          "severity_moderate": "Beighton score 7-8",
+          "snomed_code": "298180004",
+          "age_adult_presentation": "May lead to joint pain and instability",
+          "severity_mild": "Beighton score 4-6",
+          "severity_severe": "Beighton score 9 with complications",
+          "age_elderly_presentation": "Often decreases with age but complications persist",
+          "updated_at": "2025-07-13T01:22:20.082000000Z",
+          "body_system": "Musculoskeletal",
+          "temporal_pattern": "chronic",
+          "name": "Joint hypermobility",
+          "age_pediatric_presentation": "Often more pronounced in children",
+          "measurable": true
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:14"
+      }
+    },
+    {
+      "n": {
+        "identity": 15,
+        "labels": [
+          "Symptom"
+        ],
+        "properties": {
+          "hpo_code": "HP:0000545",
+          "created_at": "2025-07-13T01:22:20.155000000Z",
+          "description": "Nearsightedness due to refractive error",
+          "severity_moderate": "Myopia -3.0 to -6.0 diopters",
+          "snomed_code": "22253000",
+          "age_adult_presentation": "May progress to high myopia",
+          "severity_mild": "Myopia -0.5 to -3.0 diopters",
+          "severity_severe": "High myopia >-6.0 diopters",
+          "age_elderly_presentation": "Risk of retinal complications",
+          "updated_at": "2025-07-13T01:22:20.155000000Z",
+          "body_system": "Ocular",
+          "temporal_pattern": "progressive",
+          "name": "Myopia",
+          "age_pediatric_presentation": "Often develops in school age",
+          "measurable": true
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:15"
+      }
+    },
+    {
+      "n": {
+        "identity": 16,
+        "labels": [
+          "Provider"
+        ],
+        "properties": {
+          "specialty": "Cardiology",
+          "research_interests": [
+            "Aortic Root Disease",
+            "Genetic Cardiomyopathies"
+          ],
+          "contact_phone": "+1-555-0124",
+          "credentials_board_certifications": [
+            "Cardiology",
+            "Internal Medicine"
+          ],
+          "created_at": "2025-07-13T01:22:20.292000000Z",
+          "active": true,
+          "credentials_degrees": [
+            "MD"
+          ],
+          "sub_specialties": [
+            "Inherited Cardiomyopathies",
+            "Aortic Diseases"
+          ],
+          "contact_email": "michael.chen@heartinst.org",
+          "institution": "Heart Institute",
+          "name": "Dr. Michael Chen",
+          "provider_id": "PROV002",
+          "credentials_years_experience": 12,
+          "department": "Department of Cardiology",
+          "contact_office": "Cardiac Center, Suite 200"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:16"
+      }
+    },
+    {
+      "n": {
+        "identity": 17,
+        "labels": [
+          "Provider"
+        ],
+        "properties": {
+          "specialty": "Ophthalmology",
+          "research_interests": [
+            "Lens Dislocation",
+            "Inherited Retinal Diseases"
+          ],
+          "contact_phone": "+1-555-0125",
+          "credentials_board_certifications": [
+            "Ophthalmology"
+          ],
+          "created_at": "2025-07-13T01:22:20.361000000Z",
+          "active": true,
+          "credentials_degrees": [
+            "MD"
+          ],
+          "sub_specialties": [
+            "Genetic Eye Diseases",
+            "Retinal Disorders"
+          ],
+          "contact_email": "emily.rodriguez@eyecare.org",
+          "institution": "Eye Care Center",
+          "name": "Dr. Emily Rodriguez",
+          "provider_id": "PROV003",
+          "credentials_years_experience": 8,
+          "department": "Department of Ophthalmology",
+          "contact_office": "Vision Building, Floor 3"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:17"
+      }
+    },
+    {
+      "n": {
+        "identity": 18,
+        "labels": [
+          "DiagnosticTest"
+        ],
+        "properties": {
+          "clinical_contraindications": [
+            "Patient refusal",
+            "Insurance authorization required"
+          ],
+          "clinical_indications": [
+            "Suspected Marfan Syndrome",
+            "Family history",
+            "Aortic root dilatation"
+          ],
+          "cost_typical_range_max": 3000,
+          "param_contrast_used": false,
+          "created_at": "2025-07-13T01:22:20.527000000Z",
+          "clinical_specificity": 0.99,
+          "clinical_sensitivity": 0.98,
+          "cost_typical_range_min": 1000,
+          "test_type": "Laboratory",
+          "availability_routine_wait_days": 14,
+          "availability_urgent": false,
+          "param_preparation_required": false,
+          "param_radiation_exposure": false,
+          "name": "Marfan Syndrome Genetic Panel",
+          "param_duration_minutes": 5,
+          "test_code": "GEN001",
+          "category": "Genetic Testing"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:18"
+      }
+    },
+    {
+      "n": {
+        "identity": 19,
+        "labels": [
+          "DiagnosticTest"
+        ],
+        "properties": {
+          "clinical_contraindications": [
+            "Acute eye trauma",
+            "Recent eye surgery"
+          ],
+          "clinical_indications": [
+            "Lens dislocation screening",
+            "Myopia assessment",
+            "Retinal detachment risk"
+          ],
+          "cost_typical_range_max": 300,
+          "param_contrast_used": false,
+          "created_at": "2025-07-13T01:22:20.617000000Z",
+          "clinical_specificity": 0.92,
+          "clinical_sensitivity": 0.85,
+          "cost_typical_range_min": 150,
+          "test_type": "Clinical Assessment",
+          "availability_routine_wait_days": 10,
+          "availability_urgent": true,
+          "param_preparation_required": true,
+          "param_radiation_exposure": false,
+          "name": "Ophthalmologic Examination",
+          "param_duration_minutes": 60,
+          "test_code": "OPH001",
+          "category": "Specialized Physical Exam"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:19"
+      }
+    },
+    {
+      "n": {
+        "identity": 20,
+        "labels": [
+          "DiagnosticTest"
+        ],
+        "properties": {
+          "clinical_contraindications": [
+            "Contrast allergy",
+            "Severe renal impairment",
+            "Pregnancy"
+          ],
+          "clinical_indications": [
+            "Aortic aneurysm screening",
+            "Aortic dissection evaluation",
+            "Surgical planning"
+          ],
+          "cost_typical_range_max": 1500,
+          "param_contrast_used": true,
+          "created_at": "2025-07-13T01:22:20.691000000Z",
+          "clinical_specificity": 0.95,
+          "clinical_sensitivity": 0.98,
+          "cost_typical_range_min": 800,
+          "test_type": "Contrast Imaging",
+          "availability_routine_wait_days": 3,
+          "availability_urgent": true,
+          "param_preparation_required": true,
+          "param_radiation_exposure": true,
+          "name": "CT Angiography Aorta",
+          "param_duration_minutes": 30,
+          "test_code": "CT001",
+          "category": "Vascular Imaging"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:20"
+      }
+    },
+    {
+      "n": {
+        "identity": 21,
+        "labels": [
+          "Treatment"
+        ],
+        "properties": {
+          "cost_procedure_max": 200,
+          "common_side_effects": [
+            "Fatigue",
+            "Dizziness",
+            "Cold extremities"
+          ],
+          "contraindications": [
+            "Severe asthma",
+            "Heart block",
+            "Severe hypotension"
+          ],
+          "duration_procedure_hours": 0,
+          "treatment_id": "TRT002",
+          "created_at": "2025-07-13T01:22:20.907000000Z",
+          "treatment_type": "Medical Management",
+          "efficacy_mortality_rate": 0.001,
+          "timing_optimal_age_min": 10,
+          "cost_procedure_min": 50,
+          "efficacy_success_rate": 0.8,
+          "timing_urgency_level": "Routine",
+          "cost_follow_up_annual": 500,
+          "duration_recovery_weeks": 0,
+          "name": "Beta-blocker Therapy",
+          "category": "Pharmacological",
+          "efficacy_complication_rate": 0.15,
+          "rare_side_effects": [
+            "Depression",
+            "Impotence",
+            "Bronchospasm"
+          ],
+          "timing_optimal_age_max": 80
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:21"
+      }
+    },
+    {
+      "n": {
+        "identity": 22,
+        "labels": [
+          "Treatment"
+        ],
+        "properties": {
+          "cost_procedure_max": 150,
+          "common_side_effects": [
+            "Dizziness",
+            "Hyperkalemia",
+            "Dry cough"
+          ],
+          "contraindications": [
+            "Pregnancy",
+            "Bilateral renal artery stenosis",
+            "Hyperkalemia"
+          ],
+          "duration_procedure_hours": 0,
+          "treatment_id": "TRT003",
+          "created_at": "2025-07-13T01:22:21.042000000Z",
+          "treatment_type": "Medical Management",
+          "efficacy_mortality_rate": 0.001,
+          "timing_optimal_age_min": 12,
+          "cost_procedure_min": 30,
+          "efficacy_success_rate": 0.75,
+          "timing_urgency_level": "Routine",
+          "cost_follow_up_annual": 400,
+          "duration_recovery_weeks": 0,
+          "name": "ARB Therapy",
+          "category": "Pharmacological",
+          "efficacy_complication_rate": 0.1,
+          "rare_side_effects": [
+            "Angioedema",
+            "Acute renal failure"
+          ],
+          "timing_optimal_age_max": 80
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:22"
+      }
+    },
+    {
+      "n": {
+        "identity": 23,
+        "labels": [
+          "Encounter"
+        ],
+        "properties": {
+          "followup_required": true,
+          "visit_status": "Completed",
+          "visit_location": "Genetics Clinic",
+          "created_at": "2025-07-13T01:22:21.274000000Z",
+          "followup_timeframe_weeks": 12,
+          "followup_reason": "Cardiology consultation and baseline imaging",
+          "assessment_differential_diagnosis": [],
+          "assessment_provisional_diagnosis": [
+            "Marfan Syndrome - Confirmed"
+          ],
+          "updated_at": "2025-07-13T01:22:21.274000000Z",
+          "duration_minutes": 30,
+          "encounter_id": "ENC002",
+          "assessment_clinical_impression": "Genetic testing confirms Marfan syndrome, initiate management plan",
+          "encounter_type": "Follow-up Visit",
+          "timestamp": "2024-02-12T14:00:00Z",
+          "visit_chief_complaint": "Review genetic test results"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:23"
+      }
+    },
+    {
+      "n": {
+        "identity": 24,
+        "labels": [
+          "Encounter"
+        ],
+        "properties": {
+          "followup_required": true,
+          "visit_status": "Completed",
+          "visit_location": "Cardiology Clinic",
+          "created_at": "2025-07-13T01:22:21.337000000Z",
+          "followup_timeframe_weeks": 24,
+          "followup_reason": "Monitor aortic root progression",
+          "assessment_differential_diagnosis": [],
+          "assessment_provisional_diagnosis": [
+            "Marfan Syndrome with cardiac involvement"
+          ],
+          "updated_at": "2025-07-13T01:22:21.337000000Z",
+          "duration_minutes": 45,
+          "encounter_id": "ENC003",
+          "assessment_clinical_impression": "Aortic root dilatation present, medical management recommended",
+          "encounter_type": "Cardiology Consultation",
+          "timestamp": "2024-03-05T10:00:00Z",
+          "visit_chief_complaint": "Marfan syndrome - cardiac evaluation"
+        },
+        "elementId": "4:68a9e69a-4014-442e-8ba2-ad6eff8e6603:24"
+      }
+    }
+  ]

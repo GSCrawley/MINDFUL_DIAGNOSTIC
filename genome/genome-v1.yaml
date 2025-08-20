@@ -1,0 +1,153 @@
+apiVersion: mindful.genome/v1
+kind: DigitalGenome
+metadata:
+  id: genome:v1
+  name: Mindful Diagnostic Tool – Genome v1
+  owner: clinicalai
+  created: 2025-08-13
+  annotations:
+    purpose: "Genome-driven, autopoietic runtime for medical diagnosis"
+    signedBy: security@clinicalai.example
+teleonomy:
+  goals:
+    - id: goal:safety
+      description: "Prioritize patient safety over cost/latency"
+      kpis: ["zero-contraindicated-suggestions", "explainability>=0.9"]
+    - id: goal:quality
+      description: "Evidence-grounded differential diagnosis"
+      kpis: ["precision@top3>=0.8", "coverage>=0.95"]
+    - id: goal:cost
+      description: "Minimize unnecessary tests"
+      kpis: ["avg_tests_per_case<=N"]
+  constraints:
+    - id: policy:unapproved-therapy
+      type: hard
+      rule: "Do not suggest unapproved therapy"
+    - id: policy:hipaa-minimize
+      type: hard
+      rule: "PHI minimization in prompts and logs"
+
+platform:
+  topology:
+    multiCloud: true
+    identity: "spiffe://clinical.ai/{service}"
+    namespaces: ["ingestion","oracles","workflow","kg","eventing"]
+  components:
+    - id: svc:genome-runner
+      type: Controller
+      image: ghcr.io/clinicalai/genome-runner:1.0
+      responsibilities: [interpret_genome, self_build_heal_migrate, emit_lifecycle_events]
+      policies: [policy:hipaa-minimize]
+    - id: svc:workflow-manager
+      type: Orchestrator
+      image: ghcr.io/clinicalai/workflow-manager:1.0
+      responsibilities: [execute_workflows, enforce_slos]
+    - id: svc:cognizing-oracle
+      type: Oracle
+      image: ghcr.io/clinicalai/oracle:1.0
+      responsibilities: [policy_alignment, uncertainty_management, explanation_with_provenance, model_arbitration]
+      gates: ["all_model_outputs_must_pass"]
+    - id: svc:reflector
+      type: Analyzer
+      image: ghcr.io/clinicalai/reflector:1.0
+      responsibilities: [compute_drift_quality, propose_genome_updates, safety_metrics]
+    - id: svc:fhir-adapter
+      type: Adapter
+      image: ghcr.io/clinicalai/fhir-adapter:1.0
+      responsibilities: [ingest_fhir_resources]
+    - id: svc:neo4j
+      type: Database
+      endpoint: bolt://neo4j:7687
+      responsibilities: [shared_kg]
+    - id: svc:event-store
+      type: EventBus
+      endpoint: kafka://eventbus:9092
+      topics: [observations, inferences, actions, decisions, audits]
+    - id: agent:evidence-summarizer
+      type: MCPAgent
+      mode: propose_only
+      tools: ["med-summarize","umls-normalizer"]
+      guardrails:
+        - redaction: "PHI removal"
+        - timebox_ms: 20000
+
+workflows:
+  - id: wf:triage
+    description: "Initial triage from symptoms/observations"
+    trigger:
+      topic: observations
+      condition: "Observation.category == 'triage'"
+    steps:
+      - id: step:retrieve
+        run: svc:workflow-manager
+        action: "gather_context(KG)"
+      - id: step:hypothesize
+        run: svc:cognizing-oracle
+        action: "generate_and_rank_differential"
+        guards: ["explainability>=0.8", "no_policy_violations"]
+        emits: ["InferenceEvent"]
+      - id: step:human-gate
+        run: clinician
+        action: "accept_or_request_clarification"
+        emits: ["DecisionEvent"]
+    slos:
+      latency_ms_p95: 2500
+      max_policy_violations: 0
+    recovery:
+      - on: guard_failed
+        do: "fallback_to_baseline_rules"
+  - id: wf:evidence-gathering
+    description: "Summarize evidence and counterfactuals"
+    steps:
+      - id: step:agent-proposal
+        run: agent:evidence-summarizer
+        action: "draft_summary_with_citations"
+        emits: ["ProposalEvent"]
+      - id: step:oracle-review
+        run: svc:cognizing-oracle
+        action: "policy_confidence_check"
+        emits: ["ReviewEvent"]
+      - id: step:promotion
+        run: svc:reflector
+        action: "promote_local_summary_to_shared_if_approved"
+
+data:
+  schemas:
+    sharedKG: "neo4j://db/medical"
+    localKG: "neo4j://db/local"
+  mapping:
+    codeSystems: [UMLS, SNOMEDCT, ICD10, LOINC, RxNorm]
+
+security:
+  zeroTrust:
+    mesh: true
+    mTLS: true
+    oidcProvider: "https://auth.clinical.ai"
+    abac: true
+  secrets:
+    manager: "vault://kv/clinicalai"
+  logging:
+    redaction: "PHI, secrets"
+
+compliance:
+  hipaa: true
+  gdpr: true
+  samd:
+    iso14971_risk: true
+    post_market_surveillance: true
+
+lifecycle:
+  releases:
+    - artifact: genome
+      channel: "signed"
+      approvers: ["safety_officer","ml_lead","cmo"]
+
+observability:
+  metrics:
+    - "oracle.explainability"
+    - "oracle.contraindication_hits"
+    - "workflow.latency_ms"
+    - "reflector.drift_score"
+  alerts:
+    - if: "oracle.contraindication_hits>0"
+      then: "halt_high_risk_actions & notify_cmo"

@@ -1,0 +1,115 @@
+{
+    "$id": "https://clinical.ai/schemas/oracle-io.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Cognizing Oracle I/O",
+    "type": "object",
+    "oneOf": [
+      { "$ref": "#/$defs/OracleRequest" },
+      { "$ref": "#/$defs/OracleResponse" }
+    ],
+    "$defs": {
+      "EvidenceItem": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "enum": ["Observation","Test","ImagingStudy","Variant","Procedure","Guideline","Publication"] },
+          "provenance": {
+            "type": "object",
+            "properties": {
+              "kg_nodes": { "type": "array", "items": { "type": "string" } },
+              "kg_edges": { "type": "array", "items": { "type": "string" } },
+              "event_ids": { "type": "array", "items": { "type": "string" } },
+              "citations": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["kg_nodes"]
+          },
+          "weight": { "type": "number" }
+        },
+        "required": ["id","type","provenance"]
+      },
+      "OracleRequest": {
+        "type": "object",
+        "properties": {
+          "kind": { "const": "OracleRequest" },
+          "request_id": { "type": "string" },
+          "workflow_id": { "type": "string" },
+          "step_id": { "type": "string" },
+          "patient_id": { "type": "string" },
+          "context": {
+            "type": "object",
+            "properties": {
+              "symptoms": { "type": "array", "items": { "type": "string" } },
+              "observations": { "type": "array", "items": { "$ref": "#/$defs/EvidenceItem" } },
+              "tests": { "type": "array", "items": { "$ref": "#/$defs/EvidenceItem" } },
+              "medications": { "type": "array", "items": { "$ref": "#/$defs/EvidenceItem" } },
+              "genomics": { "type": "array", "items": { "$ref": "#/$defs/EvidenceItem" } }
+            }
+          },
+          "teleonomy": {
+            "type": "object",
+            "properties": {
+              "goals": { "type": "array", "items": { "type": "string" } },
+              "hard_policies": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["goals"]
+          },
+          "query": {
+            "type": "object",
+            "properties": {
+              "task": { "enum": ["rank_differential","check_contraindications","summarize_evidence","select_test"] },
+              "top_k": { "type": "integer", "minimum": 1, "default": 5 }
+            },
+            "required": ["task"]
+          }
+        },
+        "required": ["kind","request_id","workflow_id","step_id","patient_id","teleonomy","query"]
+      },
+      "OracleResponse": {
+        "type": "object",
+        "properties": {
+          "kind": { "const": "OracleResponse" },
+          "request_id": { "type": "string" },
+          "decision_id": { "type": "string" },
+          "outputs": {
+            "type": "object",
+            "properties": {
+              "differential": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "disease_id": { "type": "string" },
+                    "score": { "type": "number" },
+                    "explanation": { "type": "string" },
+                    "evidence": { "type": "array", "items": { "$ref": "#/$defs/EvidenceItem" } }
+                  },
+                  "required": ["disease_id","score"]
+                }
+              },
+              "contraindications": { "type": "array", "items": { "type": "string" } },
+              "recommended_tests": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "explainability": { "type": "number", "minimum": 0, "maximum": 1 },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "policy_checks": {
+            "type": "object",
+            "properties": {
+              "violations": { "type": "array", "items": { "type": "string" } },
+              "mitigations": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["violations"]
+          },
+          "audit": {
+            "type": "object",
+            "properties": {
+              "event_ids": { "type": "array", "items": { "type": "string" } },
+              "trace_id": { "type": "string" }
+            }
+          }
+        },
+        "required": ["kind","request_id","decision_id","explainability","confidence","policy_checks"]
+      }
+    }
+  }
+  
